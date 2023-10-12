@@ -5,18 +5,14 @@ const userSchema = mongoose.Schema({
     type: String,
     require: true
   },
-  lastname: {
+  password: {
     type: String,
-    require: false
+    require: true
   },
   age: {
     type: Number,
     require: true
   }, 
-  profession: {
-    type: String,
-    requiere: true
-  } 
 });
 
 module.exports = mongoose.model('User', userSchema);
