@@ -1,14 +1,19 @@
 const express = require("express");
+const bcrypt = require("bcryptjs");
 const userSchema = require("../models/userModel");
 const router = express.Router();
 
-//Create User  -- POST
-router.post('/users', (req, res) => {
-  const user = userSchema(req.body);
+const saltRounds = 10; //Cuantas iteracciones le dará a la criptografía
 
+//Create User  -- POST
+router.post('/users', async (req, res) => {
+  const user = userSchema(req.body);
+  
   user
   .save()
-  .then((data) => res.json(data))
+  .then((data) => {
+    res.json(data)
+  })
   .catch((err) => res.json({message: err}));
 });
 
@@ -33,10 +38,10 @@ router.get('/users/:id', (req, res) => {
 // Actualizar Usurio -- PUT
 router.put('/users/:id', (req, res) => {
   const { id } = req.params;
-  const { name, lastname, age, profession } = req.body;
+  const { name, password, age } = req.body;
 
   userSchema
-  .updateOne({ _id: id }, { $set: {name, lastname, age, profession} })
+  .updateOne({ _id: id }, { $set: {name, password, age }})
   .then((data) => res.json(data))
   .catch((err) => res.json({message: err}));
 });
