@@ -18,3 +18,6 @@ Para poder realizar la ejecución de nuestra API se requiere hacerlo con el sigu
 ```bash 
 npm run start
 ```
+
+## Integrantes del grupo Weather APP:
+![Img](https://github.com/Kevinisky27/WeatherApp/assets/60667480/de2929a8-3fcc-4489-a1a6-0f70519acc7b)
