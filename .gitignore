@@ -1,4 +1,4 @@
 node_modules*
-.env*
+.env* 
 dbconfig.js*
 src/config/mssql.js*
