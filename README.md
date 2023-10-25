@@ -11,6 +11,7 @@ Es una aplicación hecha con Node.js utilizando Express
   - Morgan (Peticiones que van llegando)
   - Dotenv   
   - bcryptjs (HASH Password)
+  - Nodemailer (Para el envió de Mensajes por correo)
 
 ## Entorno de desarrollo: 
 Para poder realizar la ejecución de nuestra API se requiere hacerlo con el siguiente comando:
