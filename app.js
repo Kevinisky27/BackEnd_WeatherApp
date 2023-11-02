@@ -1,0 +1,32 @@
+const express = require('express');
+const app = express();
+const dotenv = require('dotenv');
+const morgan = require('morgan');
+const authRoutes = require('./routes/authRoutes');
+
+//Config
+dotenv.config();
+
+//Middleware
+app.use(express.json());
+app.use(morgan('dev'));
+
+//Routes
+app.use('/api', authRoutes);
+
+//Export
+module.exports = app;
+
+
+
+
+// app.use("/api", userRouts);
+// app.use('/api', login);
+
+// // Routes 
+// app.get("/", (req, res) => {
+//   res.send("Bienvenido a Weather App, la API de Clima 😎 ☀️")
+// });
+
+// // Servidor
+// app.listen(port, () => console.log('Servidor funcionando en el puerto: ', port));
