@@ -2,9 +2,7 @@ const jwt = require('jsonwebtoken');
 const bcryptUtils = require('../utils/bcryptUtils');
 const userRepository = require('../repositories/userRepository');
 const roleRepository = require('../repositories/roleRepository');
-const userRoleModel = require('../models/userRoleModel');
 const UserRole = require('../models/userRoleModel');
-const Role = require('../models/roleModel');
 
 const signup = async (user) => {
     try{
