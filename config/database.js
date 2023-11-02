@@ -11,7 +11,10 @@ const sequelize = new Sequelize({
     password: process.env.DB_PASSWORD,
     define: {
         timestamps: false, // Opciones adicionales de Sequelize
-      },
+      }
 });
-
+sequelize.sync()
+  .then(() => {
+    console.log('Base de datos y tablas creadas correctamente.');
+  });
 module.exports = sequelize;

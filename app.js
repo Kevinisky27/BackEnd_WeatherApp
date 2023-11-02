@@ -2,12 +2,16 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
 const morgan = require('morgan');
+const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
 
 //Config
 dotenv.config();
 
 //Middleware
+app.use(cors({
+    origin: [process.env.FRONTEND_DOMAIN]
+}));
 app.use(express.json());
 app.use(morgan('dev'));
 
