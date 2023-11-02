@@ -1,3 +1,4 @@
 src/settings/requerimientos.txt
-.env
 node_modules
+
+.env

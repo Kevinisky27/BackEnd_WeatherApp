@@ -13,6 +13,10 @@ const userSchema = mongoose.Schema({
     type: Number,
     require: true
   }, 
+  token: {
+    type: String,
+    require: true
+  }
 });
 
 module.exports = mongoose.model('User', userSchema);
