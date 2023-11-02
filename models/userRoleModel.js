@@ -9,5 +9,5 @@ const UserRole = sequelize.define('UserRole', {
   },
 });
 
-sequelize.sync({ force: process.env.DB_CONFIG_ALLOW_FORCE_SYNC }); 
+sequelize.sync({ force: JSON.parse(process.env.DB_CONFIG_ALLOW_FORCE_SYNC)}); 
 module.exports = UserRole;

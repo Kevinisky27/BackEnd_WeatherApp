@@ -61,14 +61,14 @@ const login = async (user) => {
             console.log(userExists.user_id);
             const rolesDecription = await roleRepository.findRoleDescriptionByUserId(userExists.user_id);
 
-            console.log("Roles: " + rolesDecription);
-
             token = jwt.sign({ 
                     email: userExists.email, 
                     roles: rolesDecription
                     }, process.env.SECRET_KEY);
-            console.log("Token: " + token);
-            return token;
+            return {
+                token,
+                roles: rolesDecription
+            };
         }
         return null;
     }catch(error){
