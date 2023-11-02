@@ -1,4 +1,5 @@
 const { DataTypes } = require('sequelize');
+const { Op } = require('sequelize');
 const sequelize = require('../config/database');
 
 // Model attributes are defined here

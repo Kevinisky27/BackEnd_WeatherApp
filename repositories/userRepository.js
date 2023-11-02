@@ -7,8 +7,7 @@ const findAll = async () => {
 }
 
 const findByEmail = async (email) => {
-    const user = await User.findByEmail(email);
-    return user;
+    return await User.findByEmail(email);
 }
 
 const create = async (user) => {

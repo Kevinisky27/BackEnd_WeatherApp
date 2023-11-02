@@ -4,8 +4,14 @@ POST {{url}}/signup HTTP/1.1
 Content-Type: application/json
 
 {
+    "email": "mascascdsc",
     "username": "admin",
-    "email": "mascascdsc"
+    "password": "123456",
+    "is_disabled": false,
+    "roles": [
+        "USER",
+        "ADMIN"
+    ]
 }
 
 ###
@@ -13,6 +19,6 @@ POST {{url}}/login HTTP/1.1
 Content-Type: application/json
 
 {
-    "username": "admin",
-    "email": "mascascdsc"
+    "email": "mascascdsc",
+    "password": "123456"
 }
