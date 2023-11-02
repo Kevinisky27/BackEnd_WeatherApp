@@ -1,0 +1,23 @@
+@url = http://localhost:9000/api/auth
+
+POST {{url}}/signup HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "micorreo@gmail.com",
+    "username": "fulano",
+    "password": "123456",
+    "is_disabled": false,
+    "roles": [
+        "USER"
+    ]
+}
+
+###
+POST {{url}}/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "micorreo@gmail.com",
+    "password": "123456",
+}
