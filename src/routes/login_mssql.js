@@ -5,7 +5,7 @@ const router = express.Router();
 const { config } = require("../config/mssql");
 const saltRounds = 10;
 
-//listado de personas que están registradas
+// listado de personas que están registradas
 router.get('/login', async (req, res) => {
   let data = []
 
@@ -14,7 +14,7 @@ router.get('/login', async (req, res) => {
     await sql.connect(config);
     
     // Consulta
-    const resultado = await sql.query('SELECT id, email, rol, password FROM login');
+    const resultado = await sql.query('SELECT id, email, rol, password, token FROM login');
     data = resultado.recordset;
     await sql.close();
 
